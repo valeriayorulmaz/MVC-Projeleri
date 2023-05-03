@@ -1,0 +1,45 @@
+﻿@model IEnumerable<modelfirstproje0205.Models.Proje>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjeAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalisanSayisi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjeAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CalisanSayisi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProjeNo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProjeNo })
+        </td>
+    </tr>
+}
+
+</table>
